@@ -49,23 +49,34 @@ public class ClosedRangeTest {
         	assertEquals(true, result);
         }
 
-        // @Test
-        // public void _3_8区間と3_7区間は等価でない() throws Exception {
-        // 	// 準備
-        // 	// 実行
-        // 	boolean result = new ClosedRange(3, 8).equals(new ClosedRange(3, 7));
-        // 	// 検証
-        // 	assertEquals(false, result);
-        // }
+         @Test
+         public void _3_8区間と3_7区間は等価でない() throws Exception {
+         	// 準備
+         	// 実行
+         	boolean result = new ClosedRange(3, 8).equals(new ClosedRange(3, 7));
+         	// 検証
+         	assertEquals(false, result);
+         }
     }
 
     @Nested
     class コンストラクタがあって下端点と上端点を受け取る {
+    	private ClosedRange closedRange;
+
+    	@BeforeEach
+    	public void 前処理() {
+    		closedRange = new ClosedRange(3, 8);
+    	}
+
         @Test
         public void 閉区間3_8のとき上端点が8である() {
-            ClosedRange closedRange = new ClosedRange(3, 8);
             int result = closedRange.getTopPoint();
             assertEquals(8, result);
+        }
+        @Test
+        public void 閉区間3_8のとき下端点が3である() {
+            int result = closedRange.getBottomPoint();
+            assertEquals(3, result);
         }
     }
 }

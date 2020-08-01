@@ -20,6 +20,15 @@ public class ClosedRange {
   }
 
   public boolean equals(ClosedRange cr) {
-    return true;
+	if(_bottomPoint == cr.getBottomPoint() && _topPoint == cr.getTopPoint()) return true;
+    return false;
   }
+
+public int getTopPoint() {
+	return _topPoint;
+}
+
+public int getBottomPoint() {
+	return _bottomPoint;
+}
 }
