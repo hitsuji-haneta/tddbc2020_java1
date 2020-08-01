@@ -13,22 +13,29 @@ public class ClosedRange {
   }
 
   public boolean contains(int num) {
-    if(_bottomPoint <= num && num <= _topPoint) {
+    if (_bottomPoint <= num && num <= _topPoint) {
       return true;
     }
     return false;
   }
 
-  public boolean equals(ClosedRange cr) {
-	if(_bottomPoint == cr.getBottomPoint() && _topPoint == cr.getTopPoint()) return true;
-    return false;
+  public boolean equals(ClosedRange other) {
+    if (_bottomPoint != other.bottomPoint()) return false;
+    if (_topPoint != other.topPoint()) return false;
+    return true;
   }
 
-public int getTopPoint() {
-	return _topPoint;
-}
+  public int topPoint() {
+    return _topPoint;
+  }
 
-public int getBottomPoint() {
-	return _bottomPoint;
-}
+  public int bottomPoint() {
+    return _bottomPoint;
+  }
+
+  public boolean containsAll(ClosedRange other) {
+    if (_bottomPoint > other.bottomPoint()) return false;
+    // if (_topPoint < other.topPoint()) return false;
+    return true;
+  }
 }
