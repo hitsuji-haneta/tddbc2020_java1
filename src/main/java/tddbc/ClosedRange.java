@@ -18,4 +18,8 @@ public class ClosedRange {
     }
     return false;
   }
+
+  public boolean equals(ClosedRange cr) {
+    return true;
+  }
 }
