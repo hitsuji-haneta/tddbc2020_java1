@@ -11,4 +11,8 @@ public class ClosedRange {
     _bottomPoint = bottomPoint;
     _topPoint = topPoint;
   }
+
+public boolean contains(int i) {
+	return true;
+}
 }
