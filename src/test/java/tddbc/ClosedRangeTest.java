@@ -19,7 +19,7 @@ public class ClosedRangeTest {
     @Nested
     class contanisメソッドは与えられた一つの整数が区間に含まれるかを判定する {
         private ClosedRange closedRange;
-        
+
         @BeforeEach
         public void 前処理() {
         	closedRange = new ClosedRange(3, 8);
@@ -28,16 +28,26 @@ public class ClosedRangeTest {
         @Test
         public void 引数5は3_8区間に含まれるのでTrueとなる() throws Exception {
         	boolean result = closedRange.contains(5);
-        	assertEquals(result, true);
+        	assertEquals(true, result);
         }
 
         @Test
         public void 引数2は3_8区間に含まれないのでFalseとなる() throws Exception {
         	boolean result = closedRange.contains(2);
-        	assertEquals(result, false);
+        	assertEquals(false, result);
         }
     }
 
-
+    @Nested
+    class 区間オブジェクト同士が比較できる {
+        @Test
+        public void _3_8区間と3_8区間は等価である() throws Exception {
+        	// 準備
+        	// 実行
+        	boolean result = new ClosedRange(3, 8).equals(new ClosedRange(3, 8));
+        	// 検証
+        	assertEquals(true, result);
+        }
+    }
 
 }
