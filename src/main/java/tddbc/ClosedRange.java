@@ -12,7 +12,10 @@ public class ClosedRange {
     _topPoint = topPoint;
   }
 
-public boolean contains(int i) {
-	return true;
-}
+  public boolean contains(int num) {
+    if(_bottomPoint <= num && num <= _topPoint) {
+      return true;
+    }
+    return false;
+  }
 }
