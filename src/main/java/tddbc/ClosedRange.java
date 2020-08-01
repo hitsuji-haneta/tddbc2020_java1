@@ -7,5 +7,6 @@ public class ClosedRange {
   public ClosedRange(int bottomPoint, int topPoint) {
     _bottomPoint = bottomPoint;
     _topPoint = topPoint;
+
   }
 }
